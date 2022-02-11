@@ -38,6 +38,7 @@ body {
   color: purple;
   opacity: 0;
   padding: 8px;
+
   transition: opacity 0.5s;
 }
 
