@@ -8,25 +8,30 @@
     <title>Document</title>
   </head>
   <body>
-    <div class="container">
-      <span class="containerText">TE QUIERO MUCHO</span>
-    </div>
-    <div class="container">
-      <span class="containerText">TE QUIERO MUCHO</span>
+    <div id="container" class="container">
+      <span id="containerText" class="containerText">TE QUIERO MUCHO</span>
     </div>
   </body>
 </html>
 
 <script>
-  window.onload = function () {
-    setInterval(changeAnimation, 2000);
-  };
+  const container = document.getElementById("container");
+  const text = document.getElementById("containerText");
 
-  let animationCount = 1;
+  const goodText = [
+    "TE QUIERO MUCHO",
+    "NO PODRIA VIVIR SIN VOS",
+    "SOS LO MAS",
+    "Dejen que las clases dominantes tiemblen ante una revolución comunista. Los proletarios no tienen nada que perder excepto sus cadenas. Tienen un mundo que ganar. ¡Trabajadores de todos los países se uníos!",
+  ];
 
-  const changeAnimation = () => {
-    document
-      .querySelector(".container")
-      .style.setProperty("--anim-name", `a${++animationCount}`);
-  };
+  const badText = ["na mentira jsjsjsjs", "se la creyo", "irónicamente obvio"];
+  container.addEventListener("mouseleave", () => {
+    const rand = Math.floor(Math.random() * badText.length);
+    containerText.innerText = badText[rand];
+  });
+  container.addEventListener("mouseenter", () => {
+    const rand = Math.floor(Math.random() * goodText.length);
+    containerText.innerText = goodText[rand];
+  });
 </script>

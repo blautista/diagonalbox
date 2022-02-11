@@ -35,6 +35,7 @@ body {
 
 .containerText {
   font-weight: bold;
+  color: purple;
   opacity: 0;
   padding: 8px;
   transition: opacity 0.5s;
@@ -42,7 +43,6 @@ body {
 
 .containerText:hover {
   opacity: 1;
-  color: purple;
 }
 
 @keyframes moveDiagonally {
